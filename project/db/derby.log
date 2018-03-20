@@ -1,0 +1,14 @@
+Thu May 12 22:32:49 MSK 2016 : Сетевой сервер Apache Derby Network Server - 10.10.2.0 - (1582446) запущен и готов принимать соединения на порту 1527 на {3} 
+----------------------------------------------------------------
+Thu May 12 22:33:16 MSK 2016:
+ Производится загрузка Derby версии The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): экземпляр a816c00e-0154-a675-0c45-00006669b4ea
+в каталоге базы данных D:\student\distributed\labs\JEE_FitnessClub\project\db\fclub_db sun.misc.Launcher$AppClassLoader@1d44bcfa 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_91-b14
+user.dir=C:\Program Files\glassfish-4.1.1\javadb
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=D:\student\distributed\labs\JEE_FitnessClub\project\db
+Запущен загрузчик классов базы данных - derby.database.classpath=''

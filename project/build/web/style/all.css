@@ -1,0 +1,166 @@
+* {
+    font-family: Arial, sans;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin: 40px 0px 0px -250px;
+}
+
+#container input {
+    height: 2.5em;
+    visibility: visible;
+}
+
+#container label {
+    background: #f9f9f9;
+    border-radius: .25em .25em 0 0;
+    color: #888; 
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 1em;
+    height: 2.5em;
+    line-height: 2.5em;
+    margin-right: .25em;
+    padding: 0 1.5em;
+    text-align: center;
+}
+
+#container input:hover + label {
+    background: #ddd; 
+    color: #666; 
+}
+
+#container input:checked + label {
+    background: #f1f1f1;  
+    color: #444; 
+    position: relative;
+    z-index: 6;
+}
+
+#content {
+    background: #f1f1f1; 
+    border-radius: 0 .25em .25em .25em;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    z-index: 5;
+}
+
+#content div {
+    opacity: 0;
+    width: 100%;
+    height: 400px;
+    padding: 1.5em;
+    position: absolute;
+    z-index: -100;
+    text-align: center;
+}
+
+#container input#tab-client:checked ~ #content #content-client,
+#container input#tab-manager:checked ~ #content #content-manager,
+#container input#tab-doctor:checked ~ #content #content-doctor,
+#container input#tab-coach:checked ~ #content #content-coach{
+    opacity: 1;
+    z-index: 100;
+}
+
+input.visible {
+  visibility: visible !important;
+}
+
+input#tab-client,
+input#tab-coach,
+input#tab-doctor,
+input#tab-manager{
+    visibility: hidden;
+}
+
+#regdiv {
+    text-align: center;
+}
+
+#registerBlock {
+    font-family: Arial, sans;
+    background: #f1f1f1;
+    width: 300px;
+    height: 300px;
+    position:absolute;
+    top: 0px;
+    left: 50%;
+    border: 2px solid #ddd;
+    text-align: center;
+    margin: 20px 0px 0px -150px;
+}
+
+#clientBlock {
+    font-family: Arial, sans;
+    background: #f1f1f1;
+    width: 300px;
+    position:absolute;
+    top: 0px;
+    left: 50%;
+    border: 2px solid #ddd;
+    text-align: left;
+    margin: 20px 0px 0px -150px;
+}
+
+#clientBlock #clienthead {
+    text-align: center;
+}
+
+.managerTable{   
+   border: 2px solid #000000;
+}
+
+.managerTableHeader{
+   text-align:center;
+   background:none repeat scroll 0 0 #B5B5B5;
+   padding: 5px 10px 5px 10px;
+}
+
+.managerTableOddRow{
+   text-align:center;
+   border: 1px solid #000000; 
+   background:none repeat scroll 0 0 #FFFFFF;	
+}
+
+.managerTableEvenRow{
+   text-align:center;
+   border: 1px solid #000000; 
+   background:none repeat scroll 0 0 #D3D3D3;
+}
+
+#manager-container {
+    position: absolute;
+    width: 1500px;
+    left: 50%;
+    margin: 80px 0px 0px -750px;
+}
+
+#manager-head {
+    background: #DDDDDD;
+    padding: 5px 0px 5px 0px;
+    border: 2px solid #999999;
+    text-align: center;
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    left: 50%;
+    margin: 20px 0px 0px -200px;
+}
+
+#manager-clients,
+#manager-coaches,
+#manager-doctors {
+    float: left;
+    margin: 10px 0px 0px 100px;
+}

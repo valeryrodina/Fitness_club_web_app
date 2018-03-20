@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Client profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="/project/style/all.css"/>
+    </head>
+    <body>
+        <div id="clientBlock"> 
+            <a id="clienthead" style="text-align: center"> Your profile </a><br/><br/>
+            <h:form> 
+                First name: 
+                <h:outputText value="#{clientIndexBean.cab.currPerson.forname}"/><br/><br/>
+                Second name: 
+                <h:outputText value="#{clientIndexBean.cab.currPerson.surname}" /><br/><br/>
+                Application status:
+                <h:outputText value="#{clientIndexBean.currAppStateInfo}"/>
+            </h:form>
+            <h:form rendered="#{clientIndexBean.showText == true}">
+                <div style="border: 2px solid #ccc; margin-top: 5px; padding: 5px; background-color: #999" >
+                    <h:outputFormat value="#{clientIndexBean.tmpAppText}" />
+                </div>
+                <h:commandButton action="#{clientIndexBean.modifyAppState}" value="Accept" style="position: relative; left: 50%; width: 60px; margin: 10px 10px 10px -30px"/>
+            </h:form>
+            <h:form rendered="#{clientIndexBean.showForm == true}">
+                <h:inputTextarea value="#{clientIndexBean.tmpAppText}" style="border: 2px solid #ccc; margin-top: 5px; padding: 5px; background-color: #999" /> <br/>
+                <h:commandButton action="#{clientIndexBean.modifyAppState}" value="Submit" style="position: relative; left: 50%; width: 60px; margin: 10px 10px 10px -30px"/>
+            </h:form>
+            <h:form rendered="#{clientIndexBean.renderRequestCoach == true}" style="border: 2px solid black; margin-top: 10px; padding: 5px">
+                <h:dataTable value="#{clientIndexBean.coaches}" var="coach"
+                        styleClass="managerTable"
+                        headerClass="managerTableHeader"
+                        rowClasses="managerTableOddRow,managerTableEvenRow">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                        #{coach.id}
+                    </h:column>
+                    <h:column>    				
+                        <f:facet name="header">First Name</f:facet>    				
+                        #{coach.personId.forname}
+                    </h:column>
+                    <h:column>    				
+                        <f:facet name="header">Last Name</f:facet>    				
+                        #{coach.personId.surname}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Action</f:facet>
+                        <h:commandButton action="#{clientIndexBean.assignClientToCoach}" value="Send" >
+                            <f:param name="coachid" value="#{coach.id}" />
+                        </h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </div>
+    </body>
+</html>
